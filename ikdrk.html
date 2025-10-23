@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IK-DRK HUB SITE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        header {
+            background: linear-gradient(to bottom, #1e1e1e, #121212);
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00bfff;
+            text-shadow: 0 0 10px #00bfff;
+        }
+        .neon-button {
+            background: #00bfff;
+            color: #121212;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 15px #00bfff;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .neon-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #00bfff;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 10px #00bfff; }
+            50% { box-shadow: 0 0 20px #00bfff; }
+            100% { box-shadow: 0 0 10px #00bfff; }
+        }
+        section {
+            padding: 50px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,191,255,0.3);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        .product-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .faq-accordion {
+            background: #1e1e1e;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .faq-accordion:hover {
+            background: #2a2a2a;
+        }
+        .faq-content {
+            display: none;
+            padding: 10px;
+        }
+        .faq-search {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background: #2a2a2a;
+            border: none;
+            color: #e0e0e0;
+            border-radius: 5px;
+        }
+        .animation-demo {
+            position: relative;
+            height: 200px;
+            width: 100%;
+        }
+        .phone {
+            position: absolute;
+            left: 20%;
+            top: 50%;
+            width: 100px;
+            height: 200px;
+            background: url('https://ixbt.online/live/images/original/20/93/55/2024/09/23/183f6d2c31.webp') no-repeat center/cover;
+            animation: point 3s infinite;
+        }
+        .projector {
+            position: absolute;
+            right: 20%;
+            top: 50%;
+            width: 200px;
+            height: 150px;
+            background: url('https://habrastorage.org/getpro/habr/upload_files/87c/596/1ea/87c5961ea5794f5978dc86fbbc2cc51c.jpg') no-repeat center/cover;
+        }
+        @keyframes point {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(-45deg); }
+            100% { transform: rotate(0deg); }
+        }
+        /* Оптимизация FPS */
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; animation: none !important; }
+        }
+        /* Для слабых устройств */
+        .low-fps { animation-duration: 0s !important; transition-duration: 0s !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>IK Adapter Hub - Ебаный контроль над проекторами в школе!</h1>
+        <a href="https://t.me/your_tg_group" target="_blank" class="neon-button">Вступить в TG группу, сука!</a>
+    </header>
+
+    <section id="home">
+        <h2>Добро пожаловать в мир IK-хуйни!</h2>
+        <p>Здесь ты узнаешь, как управлять проекторами и TV в школе с помощью телефона. Для балования, троллинга учителей и прочей пиздецовой забавы. Но не пали контору, блядь!</p>
+        <img src="https://i.ytimg.com/vi/21mdNyWy7rQ/maxresdefault.jpg" alt="Телефон с проектором" style="max-width:100%;">
+    </section>
+
+    <section id="about">
+        <h2>О проекте</h2>
+        <p>Версии для ПК и Android. Всё на одной странице, плавно скроллится. Оптимизировано для 30/60/90 FPS - на слабых девайсах анимации урезаем.</p>
+        <p>Придумал хуйню: галерея мемов про школьные проекторы, новости о новых адаптерах, фейковые отзывы от "школьников".</p>
+    </section>
+
+    <section id="products">
+        <h2>Товары - Купи хуйню и рули!</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://filearchive.cnews.ru/img/zoom/2012/06/04/galaxy_beam_product_image_1.jpg" alt="Телефон с IR">
+                <h3>Телефоны с встроенным IK</h3>
+                <a href="https://www.wildberries.ru/catalog/tags/telefon-smartfon-s-ik-portom" target="_blank" class="neon-button">Купить на WB</a>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/41Zf9rWETiL.jpg" alt="IR адаптер">
+                <h3>IK адаптеры</h3>
+                <a href="https://www.wildberries.ru/catalog/tags/infrakrasnyi-adapter-dlja-telefona" target="_blank" class="neon-button">Купить на WB</a>
+            </div>
+            <!-- Добавь больше карточек по желанию -->
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>FAQ - Вопросы и ответы, блядь</h2>
+        <input type="text" class="faq-search" placeholder="Поиск по FAQ...">
+        <div class="faq-item">
+            <div class="faq-accordion">Как использовать?</div>
+            <div class="faq-content">
+                <p>1. Купи телефон со встроенным ИК адаптером или отдельный адаптер, если нету.</p>
+                <p>Если всё есть:</p>
+                <ol>
+                    <li>Зайди во встроенный ИК пульт (пульт ДУ, ИК пульт, Mi пульт).</li>
+                    <li>Выбери модель проектора/приёмника в приложении, поищи и проверь конфиги по одному. Сохрани рабочую.</li>
+                    <li>Пользуйся, но не пались!</li>
+                </ol>
+                <div class="animation-demo">
+                    <div class="phone"></div>
+                    <div class="projector"></div>
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-accordion">Проекторы в школе 20 (Братск, Красноярск и т.д.)</div>
+            <div class="faq-content">
+                <ul>
+                    <li>305 | Проектор: Epson</li>
+                    <li>203,204 и т.д. с белым проектором: Mitsubishi</li>
+                    <li>Кабинет географии | Проектор: Acer</li>
+                    <li>Столовка, Библиотека | TV: Chiq</li>
+                    <li>Кабинет Трудов и ОБЖ | Проектор: BenQ</li>
+                    <li>Биология | Проектор: InFocus</li>
+                    <li>И т.д. - добавляй свои в сообществе!</li>
+                </ul>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-accordion">Правила, сука!</div>
+            <div class="faq-content">
+                <ol>
+                    <li>Не включай просто так.</li>
+                    <li>Включай аккуратно, чтоб никто не видел.</li>
+                    <li>Не рассказывай никому.</li>
+                    <li>Не говори, что у тебя ИК в телефоне.</li>
+                    <li>Не пали своих.</li>
+                    <li>Не пались.</li>
+                    <li>Не распространяй.</li>
+                    <li>Не давай программу.</li>
+                </ol>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-accordion">Производители проекторов и TV с ИК</div>
+            <div class="faq-content">
+                <p>Школьные: Epson, Mitsubishi, Acer, Chiq, BenQ, InFocus, Sony, LG, Optoma, ViewSonic. Ищи коды в аппе!</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-accordion">Для чего это?</div>
+            <div class="faq-content">
+                <p>Для балования, троллинга, выключения проектора посреди урока, чтоб все охуели. Но осторожно, не спались!</p>
+            </div>
+        </div>
+        <!-- Форма для вопросов -->
+        <h3>Задать свой вопрос</h3>
+        <form>
+            <input type="text" placeholder="Твой вопрос..." style="width:100%; padding:10px; margin-bottom:10px;">
+            <button type="submit" class="neon-button">Отправить</button>
+        </form>
+        <p>Пользователи отвечают. Анти-реклама: не спамь хуйню!</p>
+    </section>
+
+    <section id="community">
+        <h2>Сообщество</h2>
+        <p>Обсуждай, делись мемами, но без рекламы, блядь.</p>
+        <!-- Fake comments -->
+        <div class="comment">User1: Круто, выключил проектор на алгебре! 😂</div>
+    </section>
+
+    <script>
+        // Анимации появления
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+
+        // Поиск в FAQ
+        const search = document.querySelector('.faq-search');
+        const faqItems = document.querySelectorAll('.faq-item');
+        search.addEventListener('input', e => {
+            const term = e.target.value.toLowerCase();
+            faqItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(term) ? 'block' : 'none';
+            });
+        });
+
+        // Аккордеон
+        document.querySelectorAll('.faq-accordion').forEach(acc => {
+            acc.addEventListener('click', () => {
+                const content = acc.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Оптимизация FPS - простой детект
+        let lastTime = performance.now();
+        function checkFPS() {
+            const now = performance.now();
+            const fps = 1000 / (now - lastTime);
+            lastTime = now;
+            if (fps < 30) {
+                document.body.classList.add('low-fps');
+            }
+            requestAnimationFrame(checkFPS);
+        }
+        requestAnimationFrame(checkFPS);
+
+        // Fake form submit
+        document.querySelector('form').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Вопрос отправлен, сука! Жди ответов.');
+        });
+    </script>
+</body>
+</html>
